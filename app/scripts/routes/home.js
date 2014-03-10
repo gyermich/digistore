@@ -1,1 +1,3 @@
-App.
+App.HomeRoute = Ember.Route.extend({
+
+})

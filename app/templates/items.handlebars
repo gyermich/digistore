@@ -1,0 +1,15 @@
+<h1>Books Directory</h1>
+ <h3>All Books</h3>
+    <div class="row">
+      {{# each }}
+      <div class="col-6 col-sm-6 col-lg-4">
+        {{# link-to "item" this }}
+          <h4>{{ name }}</h4>
+          <img {{ bind-attr src=image }} class='thumbnail', size: '50' />
+          {{/ link-to }}
+          <strong><p>${{ price }}</p></strong>
+        </div>
+      {{/ each}}
+  </div>
+    {{ outlet }}
+
