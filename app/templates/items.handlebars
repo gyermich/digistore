@@ -8,9 +8,9 @@
           <img {{ bind-attr src=image }} class='avatar'/>
           {{/ link-to }}
           <strong><p>${{ price }}</p></strong>
-          {{# link-to action 'addToCart' this}} Add to cart {{/ link-to}}
+          <button {{ action 'addToCart' this}}> Add to cart </button>
         </div>
       {{/ each}}
   </div>
-<!--     {{ outlet }} -->
+
 

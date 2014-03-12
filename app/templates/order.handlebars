@@ -1,26 +1,32 @@
 <h3>Cart</h3>
 <table class="table">
-  {{# each orderitems }}
-  <thead>
-  <tr>
-    <th></th>
-    <th></th>
-    <th>Qty</th>
-    <th>Subtotal</th>
+    <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Qty</th>
+      <th>Subtotal</th>
 
-  </tr>
-</thead>
-<tbody>
+    </tr>
+  </thead>
+  <tbody>
+  {{# each orderitems }}
   <tr>
     <td><img {{ bind-attr src=item.image }} class='tiny_image'/></td>
     <td>{{ item.name }}</td>
     <td>
       {{ quantity }}
-      <button {{ action 'more' this }}>&#9650</button>
-      <button {{ action 'less' this }}>&#9660</button>
+      <button {{ action 'more' this }}>+</button>
+      <button {{ action 'less' this }}>-</button>
     </td>
-    <td>{{ subtotal item.price quantity }}</td>
+    <td>${{ subtotal item.price quantity }}</td>
+  </tr>
+  {{/ each}}
+  <tr>
+    <td><h4>Total:</h4></td>
+    <td></td>
+    <td></td>
+    <td>{{ total }}</td>
   </tr>
 </tbody>
-  {{/ each}}
 </table>

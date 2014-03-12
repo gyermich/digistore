@@ -60,10 +60,9 @@ function program1(depth0,data) {
   data.buffer.push("\n          <strong><p>$");
   stack1 = helpers._triageMustache.call(depth0, "price", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p></strong>\n          ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","STRING","ID"],data:data},helper ? helper.call(depth0, "action", "addToCart", "", options) : helperMissing.call(depth0, "link-to", "action", "addToCart", "", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n        </div>\n      ");
+  data.buffer.push("</p></strong>\n          <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "addToCart", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push("> Add to cart </button>\n        </div>\n      ");
   return buffer;
   }
 function program2(depth0,data) {
@@ -80,19 +79,10 @@ function program2(depth0,data) {
   return buffer;
   }
 
-function program4(depth0,data) {
-  
-  
-  data.buffer.push(" Add to cart ");
-  }
-
   data.buffer.push("<h1>Books Directory</h1>\n <h3>All Books</h3>\n    <div class=\"row\">\n      ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </div>\n<!--     ");
-  stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" -->\n\n");
+  data.buffer.push("\n  </div>\n\n\n");
   return buffer;
   
 });
@@ -105,7 +95,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, helper, options;
-  data.buffer.push("\n  <thead>\n  <tr>\n    <th></th>\n    <th></th>\n    <th>Qty</th>\n    <th>Subtotal</th>\n\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td><img ");
+  data.buffer.push("\n  <tr>\n    <td><img ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'src': ("item.image")
   },hashTypes:{'src': "ID"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
@@ -117,18 +107,21 @@ function program1(depth0,data) {
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "more", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">&#9650</button>\n      <button ");
+  data.buffer.push(">+</button>\n      <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "less", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">&#9660</button>\n    </td>\n    <td>");
+  data.buffer.push(">-</button>\n    </td>\n    <td>$");
   data.buffer.push(escapeExpression((helper = helpers.subtotal || (depth0 && depth0.subtotal),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "item.price", "quantity", options) : helperMissing.call(depth0, "subtotal", "item.price", "quantity", options))));
-  data.buffer.push("</td>\n  </tr>\n</tbody>\n  ");
+  data.buffer.push("</td>\n  </tr>\n  ");
   return buffer;
   }
 
-  data.buffer.push("<h3>Cart</h3>\n<table class=\"table\">\n  ");
+  data.buffer.push("<h3>Cart</h3>\n<table class=\"table\">\n    <thead>\n    <tr>\n      <th></th>\n      <th></th>\n      <th>Qty</th>\n      <th>Subtotal</th>\n\n    </tr>\n  </thead>\n  <tbody>\n  ");
   stack1 = helpers.each.call(depth0, "orderitems", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n</table>\n");
+  data.buffer.push("\n  <tr>\n    <td><h4>Total:</h4></td>\n    <td></td>\n    <td></td>\n    <td>");
+  stack1 = helpers._triageMustache.call(depth0, "total", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n</tbody>\n</table>\n");
   return buffer;
   
 });
