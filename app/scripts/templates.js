@@ -112,20 +112,20 @@ function program1(depth0,data) {
   data.buffer.push(" class='tiny_image'/></td>\n    <td>");
   stack1 = helpers._triageMustache.call(depth0, "item.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n    <td>");
+  data.buffer.push("</td>\n    <td>\n      ");
   stack1 = helpers._triageMustache.call(depth0, "quantity", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</td>\n    <td>\n      ");
-  data.buffer.push(escapeExpression((helper = helpers.subtotal || (depth0 && depth0.subtotal),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "item.price", "quantity", options) : helperMissing.call(depth0, "subtotal", "item.price", "quantity", options))));
-  data.buffer.push("\n      ");
+  data.buffer.push("\n      <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "more", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push("\n      ");
+  data.buffer.push(">&#9650</button>\n      <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "less", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push("\n    </td>\n  </tr>\n</tbody>\n  ");
+  data.buffer.push(">&#9660</button>\n    </td>\n    <td>");
+  data.buffer.push(escapeExpression((helper = helpers.subtotal || (depth0 && depth0.subtotal),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "item.price", "quantity", options) : helperMissing.call(depth0, "subtotal", "item.price", "quantity", options))));
+  data.buffer.push("</td>\n  </tr>\n</tbody>\n  ");
   return buffer;
   }
 
-  data.buffer.push("<h3>Cart</h3>\n<hr>\n<table class=\"table\">\n  ");
+  data.buffer.push("<h3>Cart</h3>\n<table class=\"table\">\n  ");
   stack1 = helpers.each.call(depth0, "orderitems", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n</table>\n");

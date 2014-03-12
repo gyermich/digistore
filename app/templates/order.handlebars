@@ -1,5 +1,4 @@
 <h3>Cart</h3>
-<hr>
 <table class="table">
   {{# each orderitems }}
   <thead>
@@ -15,12 +14,12 @@
   <tr>
     <td><img {{ bind-attr src=item.image }} class='tiny_image'/></td>
     <td>{{ item.name }}</td>
-    <td>{{ quantity }}</td>
     <td>
-      {{ subtotal item.price quantity }}
-      {{ action 'more' this }}
-      {{ action 'less' this }}
+      {{ quantity }}
+      <button {{ action 'more' this }}>&#9650</button>
+      <button {{ action 'less' this }}>&#9660</button>
     </td>
+    <td>{{ subtotal item.price quantity }}</td>
   </tr>
 </tbody>
   {{/ each}}
