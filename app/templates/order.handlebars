@@ -19,14 +19,14 @@
       <button {{ action 'more' this }}>+</button>
       <button {{ action 'less' this }}>-</button>
     </td>
-    <td>${{ subtotal item.price quantity }}</td>
+    <td>{{ formatted_price subtotal }}</td>
   </tr>
   {{/ each}}
   <tr>
     <td><h4>Total:</h4></td>
     <td></td>
     <td></td>
-    <td>{{ total }}</td>
+    <td>{{ formatted_price total }}</td>
   </tr>
 </tbody>
 </table>

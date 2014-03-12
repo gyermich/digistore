@@ -4,7 +4,7 @@ App.ItemsRoute = Ember.Route.extend({
         var store = this.store;
         this.store.find("order", 1).then(function (order){
           var orderitem = store.createRecord( "orderitem", { quantity: 1,
-                                                                  price: item.get("price"),
+                                                                  current_price: item.get("price"),
                                                                   item: item,
                                                                   order: order});
           order.get("orderitems").then(function(orderitems){

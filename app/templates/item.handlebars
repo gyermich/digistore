@@ -9,5 +9,7 @@
   </div>
   <div class='col-lg-4'>
     {{ description }}
+    {{ formatted_price price }}
+    <button {{ action 'addToCart' this}}> Add to cart </button>
   </div>
 </div>
