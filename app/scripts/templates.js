@@ -114,16 +114,18 @@ function program1(depth0,data) {
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "less", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
   data.buffer.push(">-</button>\n    </td>\n    <td>");
   data.buffer.push(escapeExpression((helper = helpers.formatted_price || (depth0 && depth0.formatted_price),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "subtotal", options) : helperMissing.call(depth0, "formatted_price", "subtotal", options))));
-  data.buffer.push("</td>\n  </tr>\n  ");
+  data.buffer.push("</td>\n    <td><button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeItem", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">Remove</button>\n  </tr>\n  ");
   return buffer;
   }
 
-  data.buffer.push("<h3>Cart</h3>\n<table class=\"table\">\n    <thead>\n    <tr>\n      <th></th>\n      <th></th>\n      <th>Qty</th>\n      <th>Subtotal</th>\n\n    </tr>\n  </thead>\n  <tbody>\n  ");
+  data.buffer.push("<h3>Cart</h3>\n<table class=\"table\">\n    <thead>\n    <tr>\n      <th></th>\n      <th></th>\n      <th>Qty</th>\n      <th>Subtotal</th>\n      <th></th>\n\n    </tr>\n  </thead>\n  <tbody>\n  ");
   stack1 = helpers.each.call(depth0, "orderitems", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  <tr>\n    <td><h4>Total:</h4></td>\n    <td></td>\n    <td></td>\n    <td>");
   data.buffer.push(escapeExpression((helper = helpers.formatted_price || (depth0 && depth0.formatted_price),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "total", options) : helperMissing.call(depth0, "formatted_price", "total", options))));
-  data.buffer.push("</td>\n  </tr>\n</tbody>\n</table>\n");
+  data.buffer.push("</td>\n    <td></td>\n  </tr>\n</tbody>\n</table>\n");
   return buffer;
   
 });
