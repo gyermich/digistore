@@ -12,7 +12,7 @@ App.Item.FIXTURES = [
     name: "The Most Boring Book Ever Written",
     image: "http://kerkhoven.files.wordpress.com/2011/12/boringbook41.jpg?w=208&h=300",
     description: "The Most Boring Book Ever Written is now free at Amazon.com and other fine retailers and should remain so indefinitely.",
-    price: 0.0,
+    price: 2.9,
     orderitem: 1
   }, {
     id: 2,

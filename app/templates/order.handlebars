@@ -13,10 +13,14 @@
 </thead>
 <tbody>
   <tr>
-    <td><img {{ bind-attr src=this.item.image }} class='tiny_image'/></td>
-    <td>{{ this.item.name }}</td>
+    <td><img {{ bind-attr src=item.image }} class='tiny_image'/></td>
+    <td>{{ item.name }}</td>
     <td>{{ quantity }}</td>
-    <td>{{ this.item.price }} * {{ quantity }}</td>
+    <td>
+      {{ subtotal item.price quantity }}
+      {{ action 'more' this }}
+      {{ action 'less' this }}
+    </td>
   </tr>
 </tbody>
   {{/ each}}
