@@ -5,11 +5,12 @@
       <div class="col-6 col-sm-6 col-lg-4">
         {{# link-to "item" this }}
           <h4>{{ name }}</h4>
-          <img {{ bind-attr src=image }} class='thumbnail', size: '50' />
+          <img {{ bind-attr src=image }} class='avatar'/>
           {{/ link-to }}
           <strong><p>${{ price }}</p></strong>
+          {{# link-to action 'addToCart' this}} Add to cart {{/ link-to}}
         </div>
       {{/ each}}
   </div>
-    {{ outlet }}
+<!--     {{ outlet }} -->
 
