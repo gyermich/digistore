@@ -1,0 +1,33 @@
+
+<div class="form_container">
+<form role="form" {{ action 'complete' target="completedOrder" on="submit"}}>
+    <h2>Checkout</h2>
+    <div class="form-group">
+      <label>Name</label>
+      {{input value=name class="form-control" type="text" placeholder="First Name  Last Name"}}
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      {{input value=email class="form-control" placeholder="email@email.com"}}
+    </div>
+    <div class="form-group">
+      <label>Credit Card Number</label>
+      {{input value=cc_number class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <label>CVV</label>
+      {{input value=cvv class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <label>Expiration Date</label>
+      {{input value=exp class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <label>Zip</label>
+      {{input value=zip class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      {{input type="submit" class="btn" }}
+    </div>
+  </form>
+</div>

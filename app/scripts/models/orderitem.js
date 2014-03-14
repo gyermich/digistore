@@ -14,7 +14,7 @@ App.Orderitem.FIXTURES = [
     item: 1,
     order: 1,
     quantity: 3,
-    current_price: 2.9
+    current_price: 0
 
   }
 ]
