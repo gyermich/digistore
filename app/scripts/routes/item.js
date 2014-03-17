@@ -1,6 +1,6 @@
 App.ItemRoute = Ember.Route.extend({
   actions: {
-    addToCart: function (item) {
+    addToCart: function(item) {
             var store = this.store;
             this.store.find("order", 1).then(function (order){
               var orderitem = store.createRecord( "orderitem", { quantity: 1,
