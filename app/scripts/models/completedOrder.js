@@ -4,7 +4,7 @@ App.CompletedOrder = DS.Model.extend({
   ccnumber: DS.attr("number"),
   cvv: DS.attr("number"),
   zip: DS.attr("number"),
-  exp: DS.attr("date"),
+  exp: DS.attr("number"),
   status: DS.attr("string")
 })
 
