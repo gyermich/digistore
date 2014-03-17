@@ -12,60 +12,81 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 });
 
-Ember.TEMPLATES["completedOrder"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+Ember.TEMPLATES["checkout"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
+  var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("\n<div class=\"form_container\">\n<form role=\"form\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "complete", {hash:{
-    'target': ("completedOrder"),
-    'on': ("submit")
-  },hashTypes:{'target': "STRING",'on': "STRING"},hashContexts:{'target': depth0,'on': depth0},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">\n    <h2>Checkout</h2>\n    <div class=\"form-group\">\n      <label>Name</label>\n      ");
+  data.buffer.push("\n<div class=\"form_container\">\n    <h2>Checkout</h2>\n    <div class=\"form-group\">\n      <label>Name</label>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'value': ("name"),
+    'valueBinding': ("model.name"),
     'class': ("form-control"),
     'type': ("text"),
     'placeholder': ("First Name  Last Name")
-  },hashTypes:{'value': "ID",'class': "STRING",'type': "STRING",'placeholder': "STRING"},hashContexts:{'value': depth0,'class': depth0,'type': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'valueBinding': "STRING",'class': "STRING",'type': "STRING",'placeholder': "STRING"},hashContexts:{'valueBinding': depth0,'class': depth0,'type': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      <label>Email</label>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'value': ("email"),
+    'valueBinding': ("model.email"),
     'class': ("form-control"),
     'placeholder': ("email@email.com")
-  },hashTypes:{'value': "ID",'class': "STRING",'placeholder': "STRING"},hashContexts:{'value': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"},hashContexts:{'valueBinding': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      <label>Credit Card Number</label>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'value': ("cc_number"),
+    'valueBinding': ("model.ccnumber "),
     'class': ("form-control"),
     'placeholder': (" ")
-  },hashTypes:{'value': "ID",'class': "STRING",'placeholder': "STRING"},hashContexts:{'value': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"},hashContexts:{'valueBinding': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      <label>CVV</label>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'value': ("cvv"),
+    'valueBinding': ("model.cvv"),
     'class': ("form-control"),
     'placeholder': (" ")
-  },hashTypes:{'value': "ID",'class': "STRING",'placeholder': "STRING"},hashContexts:{'value': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"},hashContexts:{'valueBinding': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      <label>Expiration Date</label>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'value': ("exp"),
+    'valueBinding': ("model.exp"),
     'class': ("form-control"),
     'placeholder': (" ")
-  },hashTypes:{'value': "ID",'class': "STRING",'placeholder': "STRING"},hashContexts:{'value': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  },hashTypes:{'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"},hashContexts:{'valueBinding': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      <label>Zip</label>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'value': ("zip"),
+    'valueBinding': ("model.zip"),
     'class': ("form-control"),
     'placeholder': (" ")
-  },hashTypes:{'value': "ID",'class': "STRING",'placeholder': "STRING"},hashContexts:{'value': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      ");
-  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'type': ("submit"),
-    'class': ("btn")
-  },hashTypes:{'type': "STRING",'class': "STRING"},hashContexts:{'type': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n    </div>\n  </form>\n</div>");
+  },hashTypes:{'valueBinding': "STRING",'class': "STRING",'placeholder': "STRING"},hashContexts:{'valueBinding': depth0,'class': depth0,'placeholder': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("\n    </div>\n    <div class=\"form-group\">\n      <button class=\"btn\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "complete", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push("> Purchase </button>\n    </div>\n  </form>\n</div>");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["completedOrder"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1;
+
+
+  data.buffer.push("<h1>Your order has been placed!</h1>\n\n<table class=\"table\">\n  <tr>\n    <td>name:</td>\n    <td> ");
+  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" </td>\n  </tr>\n  <tr>\n    <td>email: </td>\n    <td>");
+  stack1 = helpers._triageMustache.call(depth0, "email", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n  <tr>\n    <td>credit card number: </td>\n    <td>");
+  stack1 = helpers._triageMustache.call(depth0, "ccnumber", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n  <tr>\n    <td> CVV: </td>\n    <td>");
+  stack1 = helpers._triageMustache.call(depth0, "cvv", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n  <tr>\n    <td>expiration date: </td>\n    <td>");
+  stack1 = helpers._triageMustache.call(depth0, "exp", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n  <tr>\n    <td> zip: </td>\n    <td>");
+  stack1 = helpers._triageMustache.call(depth0, "zip", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n</table>");
   return buffer;
   
 });

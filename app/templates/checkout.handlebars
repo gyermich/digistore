@@ -1,0 +1,32 @@
+
+<div class="form_container">
+    <h2>Checkout</h2>
+    <div class="form-group">
+      <label>Name</label>
+      {{input valueBinding = 'model.name' class="form-control" type="text" placeholder="First Name  Last Name"}}
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      {{input valueBinding = 'model.email' class="form-control" placeholder="email@email.com"}}
+    </div>
+    <div class="form-group">
+      <label>Credit Card Number</label>
+      {{input valueBinding = 'model.cc_number' 'class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <label>CVV</label>
+      {{input valueBinding = 'model.cvv' class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <label>Expiration Date</label>
+      {{input valueBinding = 'model.exp' class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <label>Zip</label>
+      {{input valueBinding = 'model.zip' class="form-control" placeholder=" "}}
+    </div>
+    <div class="form-group">
+      <button class="btn" {{ action 'complete' this }}> Purchase </button>
+    </div>
+  </form>
+</div>

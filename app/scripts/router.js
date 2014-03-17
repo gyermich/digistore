@@ -3,6 +3,7 @@ App.Router.map(function(){
   this.resource("items", { path: "items" })
   this.resource("item", { path: ":item_id" })
   this.resource("order", { path: "cart" })
-  this.resource("completedOrder", { path: "checkout"})
+  this.resource("checkout", { path: "checkout"})
+  this.resource("completedOrder", { path: ":completedOrder_id"})
 });
 
