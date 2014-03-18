@@ -15,6 +15,9 @@ App.ItemRoute = Ember.Route.extend({
           this.transitionTo("order");
         }
       },
+    updateItem: function(item){
+        item.save();
+      },
   model: function (params) {
     return this.store.find("item", params.item_id)
   }

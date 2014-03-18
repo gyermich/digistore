@@ -16,7 +16,8 @@ App.CheckoutRoute = Ember.Route.extend({
 
       }
     },
-  model: function () {
+
+ model: function() {
     return {};
   }
 })

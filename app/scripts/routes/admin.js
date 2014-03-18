@@ -4,7 +4,7 @@ App.AdminRoute = Ember.Route.extend({
   },
   actions: {
     updateItem: function(item){
-
+      item.save();
     },
     deleteItem: function(item){
 
