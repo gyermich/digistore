@@ -14,9 +14,9 @@ App.Order = DS.Model.extend({
   // created_at: DS.attr("date")
 })
 
-App.Order.FIXTURES = [
-  {
-    id: 1,
-    orderitems: [1]
-  }
-]
+// App.Order.FIXTURES = [
+//   {
+//     id: 1,
+//     orderitems: [1]
+//   }
+// ]
