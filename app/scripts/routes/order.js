@@ -2,12 +2,14 @@ App.OrderRoute = Ember.Route.extend({
   actions: {
      more: function (orderitem) {
        orderitem.incrementProperty('quantity');
+       orderitem.save();
      },
      less: function (orderitem) {
        var quantity = orderitem.get('quantity');
 
         if (quantity > 0) {
           orderitem.decrementProperty('quantity');
+          orderitem.save();
         }
      },
      removeItem: function (orderitem) {
@@ -20,6 +22,6 @@ App.OrderRoute = Ember.Route.extend({
         }
    },
  model: function () {
-   return this.modelFor("application");
+   return this.store.find("order", localStorage.order_id);
  }
 })
