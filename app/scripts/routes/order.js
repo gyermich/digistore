@@ -18,6 +18,7 @@ App.OrderRoute = Ember.Route.extend({
                orderitems.removeObject(orderitem);
              })
              orderitem.deleteRecord();
+             orderitem.save();
            });
         }
    },
