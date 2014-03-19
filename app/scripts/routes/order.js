@@ -6,8 +6,8 @@ App.OrderRoute = Ember.Route.extend({
      less: function (orderitem) {
        var quantity = orderitem.get('quantity');
 
-        if (quantity > 1) {
-          item.decrementProperty('quantity');
+        if (quantity > 0) {
+          orderitem.decrementProperty('quantity');
         }
      },
      removeItem: function (orderitem) {

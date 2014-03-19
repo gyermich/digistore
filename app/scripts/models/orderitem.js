@@ -8,13 +8,13 @@ App.Orderitem = DS.Model.extend({
   }.property('quantity', 'current_price')
 })
 
-App.Orderitem.FIXTURES = [
-  {
-    id: 1,
-    item: 1,
-    order: 1,
-    quantity: 3,
-    current_price: 0
+// App.Orderitem.FIXTURES = [
+//   {
+//     id: 1,
+//     item: 1,
+//     order: 1,
+//     quantity: 3,
+//     current_price: 0
 
-  }
-]
+//   }
+// ]

@@ -3,7 +3,7 @@ App.Item = DS.Model.extend({
   description: DS.attr("string"),
   image: DS.attr("string"),
   price: DS.attr("number"),
-  orderitem: DS.belongsTo("orderitem", {async: true})
+  orderitem: DS.hasMany("orderitem", {async: true})
 })
 
 // App.Item.FIXTURES = [
