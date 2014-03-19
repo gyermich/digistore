@@ -3,6 +3,8 @@ App.Orderitem = DS.Model.extend({
   order: DS.belongsTo("order", { async: true }),
   quantity: DS.attr("number"),
   current_price: DS.attr("number"),
+  image: DS.attr("string"),
+  name: DS.attr("string"),
   subtotal: function(){
     return this.get('quantity') * this.get('current_price')
   }.property('quantity', 'current_price')

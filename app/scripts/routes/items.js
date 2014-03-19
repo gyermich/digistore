@@ -6,7 +6,9 @@ App.ItemsRoute = Ember.Route.extend({
           var orderitem = store.createRecord( "orderitem", { quantity: 1,
                                                             current_price: item.get("price"),
                                                             item: item,
-                                                            order: order});
+                                                            order: order,
+                                                            image: item.get("image"),
+                                                            name: item.get("name")});
           orderitem.save().then(function(){
             order.get("orderitems").then(function(orderitems){
               orderitems.pushObject(orderitem)

@@ -13,8 +13,8 @@
   <tbody>
   {{# each orderitems }}
   <tr>
-    <td><img {{ bind-attr src=item.image }} class='tiny_image'/></td>
-    <td>{{ item.name }}</td>
+    <td><img {{ bind-attr src=image }} class='tiny_image'/></td>
+    <td>{{ name }}</td>
     <td>
       {{ quantity }}
       <button {{ action 'more' this }}>+</button>

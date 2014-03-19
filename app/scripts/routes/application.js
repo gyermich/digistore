@@ -1,5 +1,5 @@
 App.ApplicationRoute = Ember.Route.extend({
-  model: function() {
+  beforeModel: function() {
     if (typeof(localStorage.order_id) === "undefined") {
       var newOrder = this.store.createRecord("order");
       newOrder.save().then(function(orderObject) {
@@ -7,7 +7,7 @@ App.ApplicationRoute = Ember.Route.extend({
         return orderObject;
         });
       } else {
-          return this.store.find("order", localStorage.order_id);
+        return this.store.find("order", localStorage.order_id);
     }
   }
 });
