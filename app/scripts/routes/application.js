@@ -1,5 +1,5 @@
 App.ApplicationRoute = Ember.Route.extend({
-  beforeModel: function() {
+  model: function() {
     if (typeof(localStorage.order_id) === "undefined") {
       var newOrder = this.store.createRecord("order");
       newOrder.save().then(function(orderObject) {
