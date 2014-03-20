@@ -1,12 +1,17 @@
 App.ItemsRoute = Ember.Route.extend({
   actions: {
     addToCart: function (item) {
+
+
+
       var order = this.modelFor("application");
       var store = this.store;
-      debugger;
+
+
       order.get("orderitems").then(function(orderitems){
         return orderitems.find(function(orderitem){
-          return orderitem.get("item").get("id") === item.get("id")
+          return orderitem.get("item").get("id") == item.get("id")
+
         })
       }).then( function (orderitem){
         if (orderitem){
@@ -22,7 +27,7 @@ App.ItemsRoute = Ember.Route.extend({
                                             name: item.get("name")
                                           })
             order.get("orderitems").pushObject(orderitem);
-            item.save();
+            orderitem.save();
         }
       })
         // var store = this.store;

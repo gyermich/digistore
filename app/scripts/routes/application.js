@@ -6,6 +6,7 @@ App.ApplicationRoute = Ember.Route.extend({
         localStorage.order_id = orderObject.get('id');
         return orderObject;
         });
+      return newOrder;
       } else {
         return this.store.find("order", localStorage.order_id);
     }

@@ -23,6 +23,6 @@ App.OrderRoute = Ember.Route.extend({
         }
    },
  model: function () {
-   return this.store.find("order", localStorage.order_id);
+   return this.modelFor("application");
  }
 })
