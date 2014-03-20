@@ -7,7 +7,7 @@ App.CheckoutRoute = Ember.Route.extend({
               self.store.find("order", localStorage.order_id).then(function(order){//3
                 completedOrder.set("order", order);
                 completedOrder.save().then(function (completedOrder) { //4
-                  self.transitionTo('completedOrder', order).then(function() { //5
+                  self.transitionTo('completedOrder', completedOrder).then(function() { //5
                     localStorage.removeItem('order_id');
                     var order = self.store.createRecord("order");
                     order.save().then(function(order) { //6

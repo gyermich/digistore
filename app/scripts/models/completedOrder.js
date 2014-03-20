@@ -1,4 +1,5 @@
 App.CompletedOrder = DS.Model.extend({
+  order: DS.belongsTo("order", { async: true }),
   name: DS.attr("string"),
   email: DS.attr("string"),
   ccnumber: DS.attr("number"),
