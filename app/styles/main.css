@@ -4,3 +4,15 @@
   border: solid 1px grey;
   margin: 0 auto;
  }
+ 
+ .tiny_image {
+  width: 64px;
+  height: 80px;
+  border: solid 1px grey;
+  margin: 0 auto;
+}
+
+.form_container {
+  margin: 0 auto;
+  width: 40%;
+}
