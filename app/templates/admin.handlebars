@@ -17,7 +17,7 @@
     <td><img {{ bind-attr src=image }} class='tiny_image'/></td>
     <td>{{ name }}</td>
     <td>{{ formatted_price price }}</td>
-    <td><button {{ action "updateItem" this }}>Update</button>
+    <td>{{# link-to "updateItem" this class="btn"}}>Update
     <button {{ action "deleteItem" this }}>Delete</button></td>
   </tr>
   {{/ each }}

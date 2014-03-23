@@ -7,5 +7,6 @@ App.Router.map(function(){
   this.resource("completedOrder", { path: ":completedOrder_id"})
   this.resource("admin", { path: "admin"})
   this.resource("newItem", {path: "items/new"})
+  this.resource("updateItem", {path: "edit/:item_id"})
 });
 
