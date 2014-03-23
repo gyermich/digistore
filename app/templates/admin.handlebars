@@ -22,8 +22,39 @@
   </tr>
   {{/ each }}
   <tr>
-    <td>{{# link-to "newItem" class="btn" }}Create New{{/ link-to }}
+    <td>{{# link-to "newItem" class="btn" }}Create New{{/ link-to }}</td>
     <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+<h1>All Orders</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {{# orders each }}
+  <tr>
+    <td></td>
+    <td>{{ id }}</td>
+    <td></td>
+  </tr>
+  {{/ each }}
+  <tr>
+    <td></td>
+   <td> <button {{ action "paid" this }}>Paid</button>
+      <button {{ action "canceled" this }}>Canceled</button></td>
     <td></td>
     <td></td>
   </tr>

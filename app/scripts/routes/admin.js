@@ -1,6 +1,7 @@
 App.AdminRoute = Ember.Route.extend({
   model: function () {
     return this.store.find("item");
+    return this.store.find("completedOrder");
   },
   actions: {
     deleteItem: function(item){
