@@ -7,7 +7,11 @@ App.AdminRoute = Ember.Route.extend({
       item.save();
     },
     deleteItem: function(item){
-
+      alert("Are you sure? :(");
+           item.deleteRecord();
+           item.save();
+           alert("Product deleted");
+           this.transitionTo('admin');
     },
     createItem: function(){
 
